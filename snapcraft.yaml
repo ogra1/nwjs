@@ -1,0 +1,46 @@
+name: snapcraft-io
+version: 0.1
+summary: Snapcraft.io webapp
+description: a webapp to browse http://snapcraft.io
+confinement: devmode
+
+apps:
+  snapcraft-io:
+    command: wrapper
+    plugs: [unity7, opengl, gsettings, home, x11, network, network-bind, pulseaudio]
+
+parts:
+  nwjs:
+    source: "http://dl.nwjs.io/v0.15.4/nwjs-v0.15.4-linux-x64.tar.gz"
+    plugin: copy
+    files:
+      credits.html: credits.html
+      icudtl.dat: icudtl.dat
+      lib: .
+      locales: locales
+      natives_blob.bin: natives_blob.bin
+      nw: nw
+      nw_100_percent.pak: nw_100_percent.pak
+      nw_200_percent.pak: nw_200_percent.pak
+      nw_material_100_percent.pak: nw_material_100_percent.pak
+      nw_material_200_percent.pak: nw_material_200_percent.pak
+      resources.pak: resources.pak
+      snapshot_blob.bin: snapshot_blob.bin
+      ../../../wrapper: wrapper
+      ../../../config: config
+    stage-packages:
+      - fontconfig-config
+      - libgcrypt20
+      - libgl1-mesa-dri
+      - libgl1-mesa-glx
+      - libglib2.0-0
+      - libgtk-3-0
+      - libnss3
+      - libpulse0
+      - libudev1
+      - libxtst6
+  fixperms:
+    source: .
+    plugin: make
+    after: [nwjs]
+
