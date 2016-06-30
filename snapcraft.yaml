@@ -1,5 +1,5 @@
 name: nw
-version: 0.1
+version: 0.15.4
 summary: node-webkit, NW.js framework
 description: the NW.js framework for node based webapps
 confinement: devmode
@@ -7,36 +7,20 @@ confinement: devmode
 apps:
   nw:
     command: bin/nw
-    plugs: [unity7, opengl, gsettings, home, x11, network, network-bind, pulseaudio]
+    plugs: [opengl, home, x11, network, network-bind, pulseaudio]
 
 parts:
   nwjs:
     source: "http://dl.nwjs.io/v0.15.4/nwjs-v0.15.4-linux-x64.tar.gz"
     plugin: copy
     files:
-      credits.html: nwjs/
-      icudtl.dat: nwjs/
-      lib: nwjs/
-      locales: nwjs/
-      natives_blob.bin: nwjs/
-      nw: nwjs/
-      nw_100_percent.pak: nwjs/
-      nw_200_percent.pak: nwjs/
-      nw_material_100_percent.pak: nwjs/
-      nw_material_200_percent.pak: nwjs/
-      resources.pak: nwjs/
-      snapshot_blob.bin: nwjs/
+      "*": nwjs/
     stage-packages:
       - fontconfig-config
-      - libgcrypt20
       - libgl1-mesa-dri
       - libgl1-mesa-glx
-      - libglib2.0-0
-      - libgtk-3-0
       - libnss3
       - libpulse0
-      - libudev1
-      - libxtst6
   fixperms:
     source: .
     plugin: make
