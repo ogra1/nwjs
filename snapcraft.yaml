@@ -14,19 +14,18 @@ parts:
     source: "http://dl.nwjs.io/v0.15.4/nwjs-v0.15.4-linux-x64.tar.gz"
     plugin: copy
     files:
-      credits.html: nwjs/credits.html
-      icudtl.dat: nwjs/icudtl.dat
+      credits.html: nwjs/
+      icudtl.dat: nwjs/
       lib: nwjs/
-      locales: nwjs/locales
-      natives_blob.bin: nwjs/natives_blob.bin
-      nw: nwjs/nw
-      nw_100_percent.pak: nwjs/nw_100_percent.pak
-      nw_200_percent.pak: nwjs/nw_200_percent.pak
-      nw_material_100_percent.pak: nwjs/nw_material_100_percent.pak
-      nw_material_200_percent.pak: nwjs/nw_material_200_percent.pak
-      resources.pak: nwjs/resources.pak
-      snapshot_blob.bin: nwjs/snapshot_blob.bin
-      ../../../nw: bin/nw
+      locales: nwjs/
+      natives_blob.bin: nwjs/
+      nw: nwjs/
+      nw_100_percent.pak: nwjs/
+      nw_200_percent.pak: nwjs/
+      nw_material_100_percent.pak: nwjs/
+      nw_material_200_percent.pak: nwjs/
+      resources.pak: nwjs/
+      snapshot_blob.bin: nwjs/
     stage-packages:
       - fontconfig-config
       - libgcrypt20
