@@ -15,7 +15,12 @@ Then install the resulting snap with:
 
         sudo snap install --devmode nw_0.15.4_amd64.snap
 
-to use it standalone you can now execute it like:
+To use it standalone you can now execute it like:
 
         nw --url="http://gitter.im/ubuntu/snappy-playpen"
 
+Alternatively you can merge a tree like:
+
+https://github.com/RIAEvangelist/nwjs-browser-framework into this tree,
+adjust the snapcraft.yaml and create a proper nw webapp snap based on
+the package.json file with just calling the snapcraft command.
