@@ -1,4 +1,4 @@
-name: nwjs
+name: nw
 version: 0.1
 summary: node-webkit, NW.js framework
 description: the NW.js framework for node based webapps
