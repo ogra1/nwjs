@@ -1,12 +1,12 @@
-name: snapcraft-io
+name: nwjs
 version: 0.1
-summary: Snapcraft.io webapp
-description: a webapp to browse http://snapcraft.io
+summary: node-webkit, NW.js framework
+description: the NW.js framework for node based webapps
 confinement: devmode
 
 apps:
-  snapcraft-io:
-    command: wrapper
+  nw:
+    command: bin/nw
     plugs: [unity7, opengl, gsettings, home, x11, network, network-bind, pulseaudio]
 
 parts:
@@ -14,20 +14,19 @@ parts:
     source: "http://dl.nwjs.io/v0.15.4/nwjs-v0.15.4-linux-x64.tar.gz"
     plugin: copy
     files:
-      credits.html: credits.html
-      icudtl.dat: icudtl.dat
-      lib: .
-      locales: locales
-      natives_blob.bin: natives_blob.bin
-      nw: nw
-      nw_100_percent.pak: nw_100_percent.pak
-      nw_200_percent.pak: nw_200_percent.pak
-      nw_material_100_percent.pak: nw_material_100_percent.pak
-      nw_material_200_percent.pak: nw_material_200_percent.pak
-      resources.pak: resources.pak
-      snapshot_blob.bin: snapshot_blob.bin
-      ../../../wrapper: wrapper
-      ../../../config: config
+      credits.html: nwjs/credits.html
+      icudtl.dat: nwjs/icudtl.dat
+      lib: nwjs/
+      locales: nwjs/locales
+      natives_blob.bin: nwjs/natives_blob.bin
+      nw: nwjs/nw
+      nw_100_percent.pak: nwjs/nw_100_percent.pak
+      nw_200_percent.pak: nwjs/nw_200_percent.pak
+      nw_material_100_percent.pak: nwjs/nw_material_100_percent.pak
+      nw_material_200_percent.pak: nwjs/nw_material_200_percent.pak
+      resources.pak: nwjs/resources.pak
+      snapshot_blob.bin: nwjs/snapshot_blob.bin
+      ../../../nw: bin/nw
     stage-packages:
       - fontconfig-config
       - libgcrypt20

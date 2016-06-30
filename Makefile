@@ -1,5 +1,5 @@
-all: install
+all:
+	chmod a+r -R ../src/parts/nwjs/install/nwjs/*
+	chmod a+x ../src/parts/nwjs/install/nwjs/nw
 
 install:
-	chmod a+r -R ../src/parts/nwjs/install/*
-	chmod a+x ../src/parts/nwjs/install/nw

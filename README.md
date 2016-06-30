@@ -7,5 +7,3 @@ native applications with all Web technologies.
 
 This snap package skeleton allows you to easily import your node project into
 the tree to make use of NW.js.
-It makes it also very easy to just use NW.js as webapp container (just edit
-the url in the "config" file)
